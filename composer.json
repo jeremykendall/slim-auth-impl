@@ -1,0 +1,34 @@
+{
+    "name": "jeremykendall/slim-auth-impl",
+    "description": "Example implementation of slim-auth",
+    "keywords": [
+        "slim",
+        "auth",
+        "acl",
+        "zf2",
+        "example"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeremy Kendall",
+            "homepage": "http://about.me/jeremykendall",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.7",
+        "ext-pdo_sqlite": "*",
+        "erusev/parsedown": "dev-master",
+        "jeremykendall/slim-auth": "dev-develop",
+        "monolog/monolog": "1.*",
+        "slim/slim": "2.*",
+        "slim/views": "0.*",
+        "twig/twig": "1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Example\\": "src/"
+        }
+    }
+}

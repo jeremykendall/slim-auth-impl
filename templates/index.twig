@@ -1,0 +1,78 @@
+{% extends 'layout.twig' %}
+
+{% block jumbotron %}
+<div class="jumbotron">
+    <h1>Example Implementation</h1>
+    <p class="lead">
+        Authentication and Authorization for the Slim Framework
+    </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-6">
+        <h3>Welcome!</h3>
+        <p>
+            Welcome to the example implementation of Slim Auth. Test drive Slim Auth
+            by logging in with one of the following sets of credentials:
+        </p>
+        <div class="row">
+            <div class="col-lg-6">
+                <dl>
+                    <dt>Username</dt>
+                    <dd>admin</dd>
+                    <dt>Password</dt>
+                    <dd>admin</dd>
+                </dl>
+            </div>
+            <div class="col-lg-6">
+                <dl>
+                    <dt>Username</dt>
+                    <dd>member</dd>
+                    <dt>Password</dt>
+                    <dd>member</dd>
+                </dl>
+            </div>
+            <div class="col-lg-12">
+                <p>
+                    <a href="/login" role="button" class="btn btn-lg btn-block btn-primary">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <h3>Status, Role, & Permissions</h3>
+        <p>
+            You are currently <strong>Logged {% if hasIdentity %}In{% else %}Out</strong>{% endif %}.
+        </p>
+        <p>
+            Your current role is <strong>{{ role|capitalize }}</strong>.
+        </p>
+        <p>
+            <a href="/" role="button" class="btn btn-lg btn-block btn-success">Home</a>
+        </p>
+        <p>
+            <a href="/member" role="button" class="btn btn-lg btn-block btn-{{ memberClass }}">Member</a>
+        </p>
+        <p>
+            <a href="/admin" role="button" class="btn btn-lg btn-block btn-{{ adminClass }}">Admin</a>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3>Slim Auth Documentation</h3>
+        <p>
+            Slim Auth documentation can be found <a href="https://github.com/jeremykendall/slim-auth/blob/master/README.md" target="_blank">here</a>. What follows is a high level overview of this example implementation.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        {{ readme|raw }}
+    </div>
+</div>
+{% endblock %}

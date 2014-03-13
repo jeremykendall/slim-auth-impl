@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Slim Auth Example Implementation">
+        <meta name="author" content="Jeremy Kendall">
+
+        <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon">
+
+        <title>Slim Auth Example Implementation</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+        <!-- Custom styles for this template -->
+        <link href="/css/jumbotron-narrow.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+        <![endif]-->
+
+        {% block stylesheets %}{% endblock %}
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/member">Members</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                    {% if hasIdentity %}
+                        <li><a href="/logout">Logout</a></li>
+                    {% else %}
+                        <li><a href="/login">Login</a></li>
+                    {% endif %}
+                </ul>
+                <h3 class="text-muted">Slim Auth</h3>
+            </div>
+
+{% block jumbotron %}
+{% endblock %}
+
+            <div class="row marketing">
+                {% block content %} {% endblock %}
+            </div>
+
+            <div class="footer">
+                <p class="text-muted credit">
+                    Brought to you by <a href="http://about.me/jeremykendall" target="_blank">Jeremy Kendall</a>
+                    <span class="pull-right">
+                        <a href="https://github.com/jeremykendall/slim-auth-impl" target="_blank">View source</a> on GitHub
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+        {% block javascript %} {% endblock %}
+
+    </body>
+</html>
