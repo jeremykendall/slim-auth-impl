@@ -42,6 +42,8 @@ create an ACL. The ACL extends `Zend\Permissions\Acl\Acl`
 (complete Zend ACL documentation can be found [here](http://framework.zend.com/manual/2.2/en/modules/zend.permissions.acl.intro.html)). The ACL is commented with a brief explanation of each section.
 
 ``` php
+use Zend\Permissions\Acl\Acl as ZendAcl;
+
 class Acl extends ZendAcl
 {
     public function __construct()
