@@ -9,6 +9,7 @@ installed:
 
 * [Vagrant](http://www.vagrantup.com/)
 * [VirtualBox](https://www.virtualbox.org/)
+* [Ansible](http://www.ansible.com/home) (See installation docs [here](http://docs.ansible.com/intro_installation.html#installing-the-control-machine))
 
 ## Usage
 

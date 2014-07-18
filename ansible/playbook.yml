@@ -1,0 +1,20 @@
+---
+- hosts: all
+  sudo: true
+  vars:
+    doc_root: /vagrant/public
+    sys_packages: ["git"]
+    php_packages: ["php5-xdebug","php5-intl","php5-sqlite"]
+    php_ppa: php5
+    server_name: "slim-auth.dev"
+    php_fpm_ini: /etc/php5/fpm/php.ini
+    php_error_reporting: -1
+    php_display_errors: 'On'
+    php_display_startup_errors: 'On'
+    php_html_errors: 'On'
+  roles:
+    - init
+    - nginx
+    - php5-fpm
+    - composer
+    - phpcommon

@@ -22,7 +22,7 @@
         "erusev/parsedown": "dev-master",
         "jeremykendall/slim-auth": "dev-develop",
         "monolog/monolog": "1.*",
-        "slim/slim": "2.*",
+        "slim/slim": ">=2.4.2, <3.0",
         "slim/views": "0.*",
         "twig/twig": "1.*"
     },
