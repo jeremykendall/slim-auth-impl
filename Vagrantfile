@@ -28,9 +28,4 @@ Vagrant.configure("2") do |config|
         owner: "vagrant",
         group: "www-data",
         mount_options: ["dmode=775,fmode=664"]
-
-    # config.vm.synced_folder "./templates/cache", "/vagrant/templates/cache", id: "twig-template-cache",
-    #     owner: "vagrant",
-    #     group: "www-data",
-    #     mount_options: ["dmode=775,fmode=664"]
 end
