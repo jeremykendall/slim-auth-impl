@@ -22,9 +22,10 @@
         "erusev/parsedown": "dev-master",
         "jeremykendall/slim-auth": "dev-develop",
         "monolog/monolog": "1.*",
-        "slim/slim": ">=2.4.2, <3.0",
+        "slim/slim": "^2.4.2",
         "slim/views": "0.*",
-        "twig/twig": "1.*"
+        "twig/twig": "1.*",
+        "psecio/iniscan": "~3.6"
     },
     "autoload": {
         "psr-0": {
