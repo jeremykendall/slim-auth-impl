@@ -144,15 +144,16 @@ $app->get('/logout', function () use ($app) {
 $app->run();
 
 /**
- * Creates database table, users and database connection
+ * Creates database table, users and database connection.
  *
  * @return \PDO
  */
-function getDb() {
+function getDb()
+{
     $dsn = 'sqlite::memory:';
     $options = array(
         \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-        \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+        \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
     );
 
     try {

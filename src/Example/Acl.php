@@ -2,18 +2,18 @@
 
 namespace Example;
 
-/**
+/*
  * Slim Auth Implementation Example
  *
  * @link      http://github.com/jeremykendall/slim-auth-impl Canonical source repo
- * @copyright Copyright (c) 2013 Jeremy Kendall (http://about.me/jeremykendall)
+ * @copyright Copyright (c) 2013-2015 Jeremy Kendall (http://about.me/jeremykendall)
  * @license   http://github.com/jeremykendall/slim-auth-impl/blob/master/LICENSE MIT
  */
 
 use Zend\Permissions\Acl\Acl as ZendAcl;
 
 /**
- * ACL for Slim Auth Implementation Example
+ * ACL for Slim Auth Implementation Example.
  */
 class Acl extends ZendAcl
 {
@@ -23,7 +23,7 @@ class Acl extends ZendAcl
     {
         // APPLICATION ROLES
         $this->addRole('guest');
-        // member role "extends" guest, meaning the member role will get all of 
+        // member role "extends" guest, meaning the member role will get all of
         // the guest role permissions by default
         $this->addRole('member', 'guest');
         $this->addRole('admin');
