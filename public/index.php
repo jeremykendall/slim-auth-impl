@@ -17,11 +17,6 @@ $app = new \Slim\Slim(array(
     'templates.path' => '../templates',
     // Debug is set to false to demonstrate custom error handling
     'debug' => false,
-    // Default identity storage is session storage. You MUST set the
-    // following cookie encryption settings if you use the SessionCookie 
-    // middleware, which this example does
-    'cookies.encrypt' => true,
-    'cookies.secret_key' => 'FZr2ucE7eu5AB31p73QsaSjSIG5jhnssjgABlxlVeNV3nRjLt',
 ));
 
 // Configure Slim Auth components
@@ -30,9 +25,6 @@ $adapter = new PdoAdapter(getDb(), 'users', 'username', 'password', $validator);
 $acl = new \Example\Acl();
 $authBootstrap = new Bootstrap($app, $adapter, $acl);
 $authBootstrap->bootstrap();
-
-// Add the session cookie middleware after auth to ensure it's executed first
-$app->add(new \Slim\Middleware\SessionCookie());
 
 // Handle the possible 403 the middleware can throw
 $app->error(function (\Exception $e) use ($app) {
@@ -166,7 +158,7 @@ function getDb() {
     try {
         $db->exec($create);
         $db->exec($delete);
-        
+
         $member = $db->prepare($member);
         $member->execute(array('pass' => password_hash('member', PASSWORD_DEFAULT)));
 
