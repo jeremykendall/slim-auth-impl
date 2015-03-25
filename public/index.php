@@ -76,9 +76,13 @@ $app->view->parserOptions = array(
     'cache' => realpath('../templates/cache'),
     'auto_reload' => true,
     'strict_variables' => false,
-    'autoescape' => true
+    'autoescape' => true,
+    'debug' => true,
 );
-$app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
+$app->view->parserExtensions = array(
+    new \Slim\Views\TwigExtension(),
+    new \Twig_Extension_Debug(),
+);
 
 // Define routes
 $app->get('/', function () use ($app) {
