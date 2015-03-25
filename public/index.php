@@ -11,6 +11,10 @@ use JeremyKendall\Password\PasswordValidator;
 use JeremyKendall\Slim\Auth\Adapter\Db\PdoAdapter;
 use JeremyKendall\Slim\Auth\Bootstrap;
 use JeremyKendall\Slim\Auth\Exception\HttpForbiddenException;
+use JeremyKendall\Slim\Auth\Exception\HttpUnauthorizedException;
+use Zend\Authentication\Storage\Session as SessionStorage;
+use Zend\Session\Config\SessionConfig;
+use Zend\Session\SessionManager;
 
 // Create app
 $app = new \Slim\Slim(array(
@@ -23,7 +27,18 @@ $app = new \Slim\Slim(array(
 $validator = new PasswordValidator();
 $adapter = new PdoAdapter(getDb(), 'users', 'username', 'password', $validator);
 $acl = new \Example\Acl();
+
+$sessionConfig = new SessionConfig();
+$sessionConfig->setOptions(array(
+    'remember_me_seconds' => 60 * 60 * 24 * 7,
+    'name' => 'slim-auth-impl',
+));
+$sessionManager = new SessionManager($sessionConfig);
+$sessionManager->rememberMe();
+$storage = new SessionStorage(null, null, $sessionManager);
+
 $authBootstrap = new Bootstrap($app, $adapter, $acl);
+$authBootstrap->setStorage($storage);
 $authBootstrap->bootstrap();
 
 // Handle the possible 403 the middleware can throw
@@ -31,6 +46,11 @@ $app->error(function (\Exception $e) use ($app) {
     if ($e instanceof HttpForbiddenException) {
         return $app->render('403.twig', array('e' => $e), 403);
     }
+
+    if ($e instanceof HttpUnauthorizedException) {
+        return $app->redirectTo('login');
+    }
+
     // You should handle other exceptions here, not throw them
     throw $e;
 });
