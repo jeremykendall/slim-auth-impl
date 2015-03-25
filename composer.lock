@@ -89,26 +89,26 @@
         },
         {
             "name": "jeremykendall/password-validator",
-            "version": "2.0.3",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeremykendall/password-validator.git",
-                "reference": "88ca3e0530d7800b4376a70a487fa9696538cf72"
+                "reference": "fed8f83379bbaaf82e056fcfef40fc82d36fe2d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeremykendall/password-validator/zipball/88ca3e0530d7800b4376a70a487fa9696538cf72",
-                "reference": "88ca3e0530d7800b4376a70a487fa9696538cf72",
+                "url": "https://api.github.com/repos/jeremykendall/password-validator/zipball/fed8f83379bbaaf82e056fcfef40fc82d36fe2d4",
+                "reference": "fed8f83379bbaaf82e056fcfef40fc82d36fe2d4",
                 "shasum": ""
             },
             "require": {
                 "ircmaxell/password-compat": "1.*",
                 "php": ">=5.3.7",
-                "wp-cli/php-cli-tools": "~0.9.4"
+                "wp-cli/php-cli-tools": "0.10.*"
             },
             "require-dev": {
                 "league/phpunit-coverage-listener": "~1.1",
-                "phpunit/phpunit": "3.*"
+                "phpunit/phpunit": "4.*"
             },
             "bin": [
                 "bin/cost-check",
@@ -141,7 +141,7 @@
                 "passwords",
                 "security"
             ],
-            "time": "2014-02-15 15:49:57"
+            "time": "2015-03-25 08:38:48"
         },
         {
             "name": "jeremykendall/slim-auth",
@@ -149,26 +149,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeremykendall/slim-auth.git",
-                "reference": "ce54dacad8dc08f844d6c16c50af85472c21c3f5"
+                "reference": "cede73eec8a09c9cfcb6a62ec3a85d2446de40ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeremykendall/slim-auth/zipball/ce54dacad8dc08f844d6c16c50af85472c21c3f5",
-                "reference": "ce54dacad8dc08f844d6c16c50af85472c21c3f5",
+                "url": "https://api.github.com/repos/jeremykendall/slim-auth/zipball/cede73eec8a09c9cfcb6a62ec3a85d2446de40ed",
+                "reference": "cede73eec8a09c9cfcb6a62ec3a85d2446de40ed",
                 "shasum": ""
             },
             "require": {
-                "jeremykendall/password-validator": "2.*",
+                "jeremykendall/password-validator": "3.*",
                 "php": ">=5.3.7",
-                "wp-cli/php-cli-tools": "~0.9.4",
-                "zendframework/zend-authentication": "2.3.*",
-                "zendframework/zend-permissions-acl": "2.3.*",
-                "zendframework/zend-session": "2.3.*"
+                "wp-cli/php-cli-tools": "~0.10",
+                "zendframework/zend-authentication": "2.*",
+                "zendframework/zend-permissions-acl": "2.*",
+                "zendframework/zend-session": "2.*"
             },
             "require-dev": {
+                "jeremykendall/debug-die": "0.0.1.*",
                 "league/phpunit-coverage-listener": "~1.1",
                 "phpunit/phpunit": "4.*",
-                "slim/slim": ">=2.4.2, <3.0"
+                "slim/slim": "^2.4.2"
             },
             "suggest": {
                 "zendframework/zend-db": "For the Zend\\Authentication\\Adapter\\DbTable adapters."
@@ -205,7 +206,7 @@
                 "zend",
                 "zf2"
             ],
-            "time": "2014-07-18 19:31:20"
+            "time": "2015-03-25 21:23:36"
         },
         {
             "name": "monolog/monolog",
@@ -583,16 +584,16 @@
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.9.5",
+            "version": "v0.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "89461455b360693da07355460a2597baa0108c1d"
+                "reference": "228e8c1300675313e519b4195783aaa1a1a020bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/89461455b360693da07355460a2597baa0108c1d",
-                "reference": "89461455b360693da07355460a2597baa0108c1d",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/228e8c1300675313e519b4195783aaa1a1a020bf",
+                "reference": "228e8c1300675313e519b4195783aaa1a1a020bf",
                 "shasum": ""
             },
             "require": {
@@ -629,7 +630,7 @@
                 "cli",
                 "console"
             ],
-            "time": "2014-06-29 20:40:27"
+            "time": "2015-02-27 22:11:29"
         },
         {
             "name": "zendframework/zend-authentication",
